@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ProjectsController;
 use Illuminate\Support\Facades\Route;
+use Tests\Feature\ProjectsTest;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/projects', [ProjectsController::class, 'index']);
+
+Route::post('/projects', [ProjectsController::class, 'store']);
