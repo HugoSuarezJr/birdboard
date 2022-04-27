@@ -20,7 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/projects', [ProjectsController::class, 'index']);
+Route::get('/projects', [ProjectsController::class, 'index'])->middleware('auth');
 
 Route::get('/projects/{project}', [ProjectsController::class, 'show']);
 
